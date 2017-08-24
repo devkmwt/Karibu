@@ -12,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,9 +57,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Registration extends Fragment implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
+public class Registration extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
-    View convertview;
     Context context;
     Button facebooksignup, googlesingup, signup;
     TextView login;
@@ -76,14 +76,14 @@ public class Registration extends Fragment implements View.OnClickListener, Goog
     private int RC_SIGN_IN=100;
     ServerApi serverApi;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
-                             Bundle savedInstanceState)  {
-        context=getActivity().getApplicationContext();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_registration);
+
+        context=Registration.this;
         FacebookSdk.sdkInitialize(context);
 
-        super.onCreate(savedInstanceState);
-        convertview = inflater.inflate(R.layout.activity_registration, container, false);
+    //    convertview = inflater.inflate(R.layout.activity_registration, container, false);
 
        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://karibu.kbctindia.com/")
@@ -92,16 +92,16 @@ public class Registration extends Fragment implements View.OnClickListener, Goog
 
          serverApi =retrofit.create(ServerApi.class);
 
-        facebooksignup = (Button)convertview.findViewById(R.id.facbook_btn_rgstr);
-        googlesingup = (Button)convertview. findViewById(R.id.google_btn_rgstr);
-        login=(TextView)convertview.findViewById(R.id.login);
+        facebooksignup = (Button)findViewById(R.id.facbook_btn_rgstr);
+        googlesingup = (Button) findViewById(R.id.google_btn_rgstr);
+        login=(TextView)findViewById(R.id.login);
 
-        edit_email = (EditText)convertview.findViewById(R.id.edit_email);
-        edit_name = (EditText) convertview.findViewById(R.id.edit_name);
-        edit_mob = (EditText) convertview.findViewById(R.id.edit_mobile);
-        edit_password = (EditText) convertview.findViewById(R.id.edit_password);
-        edit_cpassword = (EditText) convertview.findViewById(R.id.edit_con_pass);
-        signup =(Button) convertview.findViewById(R.id.btn_signup);
+        edit_email = (EditText)findViewById(R.id.edit_email);
+        edit_name = (EditText) findViewById(R.id.edit_name);
+        edit_mob = (EditText) findViewById(R.id.edit_mobile);
+        edit_password = (EditText) findViewById(R.id.edit_password);
+        edit_cpassword = (EditText) findViewById(R.id.edit_con_pass);
+        signup =(Button) findViewById(R.id.btn_signup);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,7 +176,7 @@ public class Registration extends Fragment implements View.OnClickListener, Goog
                 }
                 if (isemail && isname && ismob && iscpass) {
 
-                    app_retro_registration(appemail,appname,appmobile,appcpassword,getActivity());
+                    app_retro_registration(appemail,appname,appmobile,appcpassword,Registration.this);
                 }
             }
         });
@@ -241,7 +241,7 @@ public class Registration extends Fragment implements View.OnClickListener, Goog
                 .addScope(new Scope(Scopes.PLUS_LOGIN))
                 .build();*/
 
-        return convertview;
+     //   return convertview;
     }
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -293,11 +293,8 @@ public class Registration extends Fragment implements View.OnClickListener, Goog
 
         if(v == login ){
 
-            Log_in log_in = new Log_in();
-            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.first_container, log_in);
-            fragmentTransaction.addToBackStack(log_in.getClass().getName());
-            fragmentTransaction.commit();
+            Intent intent=new Intent(Registration.this,Log_in.class);
+            startActivity(intent);
 
         }
     }
@@ -335,7 +332,7 @@ public class Registration extends Fragment implements View.OnClickListener, Goog
                     Toast.makeText(activity, "Thanks for Registration", Toast.LENGTH_SHORT).show();
                    /* Toast.makeText(activity, ""+response.body().getUserid(), Toast.LENGTH_SHORT).show();
                     SharedPrefManager.getInstance(activity.getApplicationContext()).saveUser_details("userid",response.body().getUserid());*/
-                    Intent intent=new Intent(getActivity(),Home.class);
+                    Intent intent=new Intent(Registration.this,Home.class);
                     startActivity(intent);
 
                 }

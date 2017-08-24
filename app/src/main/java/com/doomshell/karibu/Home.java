@@ -22,7 +22,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import com.doomshell.karibu.helper.CustomTypefaceSpan;
-import com.doomshell.karibu.helper.SharedPrefManager;
+import com.doomshell.karibu.model.SharedPrefManager;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -54,25 +54,25 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        View Headerview=navigationView.getHeaderView(0);
-
         navview = navigationView.getHeaderView(0);
         name = (TextView) navview.findViewById(R.id.Dusername);
         mobileno = (TextView) navview.findViewById(R.id.Dmobile);
         emailid = (TextView) navview.findViewById(R.id.Demail);
 
-        if(SharedPrefManager.getInstance(Home.this).getuser_login("login"))
+        nav_logout_btn=(Button) navigationView.findViewById(R.id.nav_logout_btn);
+
+        if(SharedPrefManager.getInstance(Home.this).getLogin_status("islogin"))
         {
-            userid = SharedPrefManager.getInstance(Home.this).getuser_details("userid");
-            email = SharedPrefManager.getInstance(Home.this).getuser_details("emailid");
-            fname = SharedPrefManager.getInstance(Home.this).getuser_details("fname");
-            mobl = SharedPrefManager.getInstance(Home.this).getuser_details("mobile");
+            userid = SharedPrefManager.getInstance(Home.this).getUser_details("userid");
+            email = SharedPrefManager.getInstance(Home.this).getUser_details("emailid");
+            fname = SharedPrefManager.getInstance(Home.this).getUser_details("fname");
+            mobl = SharedPrefManager.getInstance(Home.this).getUser_details("mobile");
 
             if (email.equalsIgnoreCase("null") || email == null) {
                 email = "";
             }
-            if (fname.equalsIgnoreCase("null") || fname == null) {
-                fname = "";
+            if (fname.equalsIgnoreCase("null") || fname.equals("")) {
+                fname = "Please update";
             }
             if (mobl.equalsIgnoreCase("null") || mobl == null) {
                 mobl = "";
@@ -81,15 +81,17 @@ public class Home extends AppCompatActivity
             name.setText(fname);
             mobileno.setText(mobl);
             emailid.setText(email);
+            nav_logout_btn.setText("Log out");
         }else
         {
             name.setText("");
             mobileno.setText("");
-            emailid.setText("");
+            emailid.setText("Please login");
+            nav_logout_btn.setText("Log in");
         }
      // profile_imageView=(ImageView)Headerview.findViewById(R.id.profile_imageView);
 
-        nav_logout_btn=(Button) navigationView.findViewById(R.id.nav_logout_btn);
+
 
         navview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -233,15 +235,9 @@ public class Home extends AppCompatActivity
 */
         if(view==nav_logout_btn)
         {
-            Intent intent = new Intent(Home.this, Account.class);
-            startActivity(intent);
-            finish();
 
-            /*Log_in login=new Log_in();
-            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.home_container,login);
-            transaction.addToBackStack(login.getClass().getName().toString());
-            transaction.commit();*/
+            Intent intent=new Intent(Home.this,Log_in.class);
+            startActivity(intent);
 //            Toast.makeText(this, "ojk ok ok ", Toast.LENGTH_SHORT).show();
         }
     }

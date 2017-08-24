@@ -1,10 +1,12 @@
 package com.doomshell.karibu;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +21,7 @@ import java.util.regex.Pattern;
  * Created by vikas on 3/10/2017.
  */
 
-public class ForgotPassword extends Fragment implements View.OnClickListener {
+public class ForgotPassword extends AppCompatActivity implements View.OnClickListener {
     Button reset;
     EditText edit_email;
     String appemail;
@@ -30,23 +32,22 @@ public class ForgotPassword extends Fragment implements View.OnClickListener {
 
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_forgot_password);
         //FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
-        View view=inflater.inflate(R.layout.fragment_forgot_password,container,false);
-        edit_email=(EditText)view.findViewById(R.id.forgotemail);
-        signup_textview=(TextView) view.findViewById(R.id.signup_textview);
-        login_textview=(TextView) view.findViewById(R.id.login_textview);
+     //   View view=inflater.inflate(R.layout.fragment_forgot_password,container,false);
+        edit_email=(EditText)findViewById(R.id.forgotemail);
+        signup_textview=(TextView) findViewById(R.id.signup_textview);
+        login_textview=(TextView) findViewById(R.id.login_textview);
 
 
-        reset=(Button)view.findViewById(R.id.reset);
+        reset=(Button)findViewById(R.id.reset);
 
         reset.setOnClickListener(this);
         signup_textview.setOnClickListener(this);
         login_textview.setOnClickListener(this);
 
-        return view;
     }
 
     @Override
@@ -54,20 +55,19 @@ public class ForgotPassword extends Fragment implements View.OnClickListener {
 
         if(view==signup_textview)
         {
-            Registration firstpage_login=new Registration();
-            FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.first_container,firstpage_login);
-            fragmentTransaction.addToBackStack(firstpage_login.getClass().getName());
-            fragmentTransaction.commit();
+            Intent intent=new Intent(ForgotPassword.this,Registration.class);
+            startActivity(intent);
         }
 
         if(view==login_textview)
         {
-            Log_in firstpage_login=new Log_in();
+          /*  Log_in firstpage_login=new Log_in();
             FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.first_container,firstpage_login);
             fragmentTransaction.addToBackStack(firstpage_login.getClass().getName());
-            fragmentTransaction.commit();
+            fragmentTransaction.commit();*/
+            Intent intent=new Intent(ForgotPassword.this,Log_in.class);
+            startActivity(intent);
         }
 
         if(view==reset)
@@ -107,9 +107,6 @@ public class ForgotPassword extends Fragment implements View.OnClickListener {
 
 
     }
-
-
-
 /*
     void App_pass_reset(String email)
     {

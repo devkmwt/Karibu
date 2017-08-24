@@ -30,6 +30,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Milano" />
+        <activity android:name=".Log_in"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Registration"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ForgotPassword"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Milano_search" />
         <activity android:name=".Checkout" />
         <activity android:name=".Milano_product"

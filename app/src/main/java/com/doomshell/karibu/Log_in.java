@@ -12,11 +12,13 @@ import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -25,6 +27,7 @@ import android.widget.Toast;
 
 import com.doomshell.karibu.helper.ServerApi;
 import com.doomshell.karibu.model.SharedPrefManager;
+import com.doomshell.karibu.model.retrofit_model.Login;
 import com.doomshell.karibu.model.retrofit_model.RetroLoginPojo;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -55,7 +58,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class Log_in extends Fragment implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
+public class Log_in extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
     EditText edit_login, edit_pass;
     TextView frgt, rgstr;
@@ -63,7 +66,7 @@ public class Log_in extends Fragment implements View.OnClickListener, GoogleApiC
     Button facebooklogin, googlelogin;
     String applogin,apppassword;
     String email, fname;
-    View convertview;
+  //  View convertview;
     Context context;
 
     ServerApi serverApi;
@@ -74,15 +77,16 @@ public class Log_in extends Fragment implements View.OnClickListener, GoogleApiC
     private GoogleApiClient mGoogleApiClient;
     private int RC_SIGN_IN=100;
 
-    @Override
-     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                              Bundle savedInstanceState) {
-    context=getActivity().getApplicationContext();
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_log_in);
+
+    context=Log_in.this;
         Retrofit retrofit;
         FacebookSdk.sdkInitialize(context);
         // printHashKey();
-        super.onCreate(savedInstanceState);
-        convertview = inflater.inflate(R.layout.activity_log_in, container, false);
+     //   convertview = inflater.inflate(R.layout.activity_log_in, container, false);
 
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://karibu.kbctindia.com/")
@@ -91,14 +95,14 @@ public class Log_in extends Fragment implements View.OnClickListener, GoogleApiC
 
         serverApi =retrofit.create(ServerApi.class);
 
-        edit_login = (EditText)convertview.findViewById(R.id.edit_id);
-        edit_pass = (EditText) convertview.findViewById(R.id.edit_pass);
-        frgt = (TextView) convertview.findViewById(R.id.text_frgt);
-        rgstr = (TextView) convertview.findViewById(R.id.text_rgstr);
-        singin = (Button) convertview.findViewById(R.id.btn_signin);
+        edit_login = (EditText)findViewById(R.id.edit_id);
+        edit_pass = (EditText) findViewById(R.id.edit_pass);
+        frgt = (TextView) findViewById(R.id.text_frgt);
+        rgstr = (TextView)findViewById(R.id.text_rgstr);
+        singin = (Button) findViewById(R.id.btn_signin);
 
-        facebooklogin = (Button) convertview.findViewById(R.id.facbook_btn);
-        googlelogin = (Button) convertview.findViewById(R.id.google_btn);
+        facebooklogin = (Button) findViewById(R.id.facbook_btn);
+        googlelogin = (Button) findViewById(R.id.google_btn);
 
         callbackManager = CallbackManager.Factory.create();
         fbLoginManager = LoginManager.getInstance();
@@ -162,12 +166,10 @@ public class Log_in extends Fragment implements View.OnClickListener, GoogleApiC
                 .addScope(new Scope(Scopes.PLUS_LOGIN))
                 .build();*/
 
-        return convertview;
+      //  return convertview;
     }
 
-    private SharedPreferences getSharedPreferences(String profile, int modePrivate) {
-        return null;
-    }
+
 
     private void send_facebook_login() {
 
@@ -199,21 +201,28 @@ public class Log_in extends Fragment implements View.OnClickListener, GoogleApiC
                 int sucess=response.body().getSuccess();
                 if(sucess==1)
                 {
-                    SharedPrefManager.getInstance(getActivity().getApplicationContext()).saveUser_details("userid",response.body().getUserId().toString());
-                    SharedPrefManager.getInstance(getActivity().getApplicationContext()).saveUser_details("emailid",response.body().getEmailId().toString());
-                    SharedPrefManager.getInstance(getActivity().getApplicationContext()).saveUser_details("fname",response.body().getFirstName().toString());
-                    SharedPrefManager.getInstance(getActivity().getApplicationContext()).saveUser_details("mobile",response.body().getMobile().toString());
-                    SharedPrefManager.getInstance(getActivity().getApplicationContext()).save_Login_status("islogin",true);
+                    String mob="";
+                    if(response.body().getMobile()!=null)
+                    {
+                        mob= (String) response.body().getMobile();
+                    }
+
+
+                    SharedPrefManager.getInstance(context).saveUser_details("userid",response.body().getUserId().toString());
+                    SharedPrefManager.getInstance(context).saveUser_details("emailid",response.body().getEmailId().toString());
+                    SharedPrefManager.getInstance(context).saveUser_details("fname",response.body().getFirstName().toString());
+                    SharedPrefManager.getInstance(context).saveUser_details("mobile",mob);
+                    SharedPrefManager.getInstance(context).save_Login_status("islogin",true);
 
                     contactdialog.dismiss();
                     Toast.makeText(context, "Welcome "+response.body().getFirstName(), Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(getActivity(),Home.class);
+                    Intent intent=new Intent(context,Home.class);
                     startActivity(intent);
                 }
                 else
                 {
                     contactdialog.dismiss();
-                    Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "No registered user", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
@@ -325,7 +334,7 @@ public class Log_in extends Fragment implements View.OnClickListener, GoogleApiC
             }
             if(islogin && ispassword)
             {
-                send_login(applogin,apppassword, getActivity());
+                send_login(applogin,apppassword, Log_in.this);
             }
         }
         if (v == facebooklogin)
@@ -340,11 +349,11 @@ public class Log_in extends Fragment implements View.OnClickListener, GoogleApiC
 
         if(v == rgstr)
         {
-            Registration registration = new Registration();
+           /* Registration registration = new Registration();
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.first_container, registration);
             fragmentTransaction.addToBackStack(registration.getClass().getName());
-            fragmentTransaction.commit();
+            fragmentTransaction.commit();*/
         }
 
     }
@@ -360,5 +369,6 @@ public class Log_in extends Fragment implements View.OnClickListener, GoogleApiC
         startActivityForResult(signInIntent, RC_SIGN_IN);
 
     }
+
 
 }

@@ -89,7 +89,7 @@ public class Edit_profile extends Fragment implements View.OnClickListener{
         }*/
         if(v==save){
 
-            edit_profile(sname,smobile);
+            edit_profile(fname.getText().toString(),mobile.getText().toString());
         }
     }
     private void edit_profile(String sfname, String smobile) {

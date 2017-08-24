@@ -109,7 +109,7 @@ public class ZipcodeFragment extends Fragment implements View.OnClickListener,Lo
         float lat = (float) (location.getLatitude());
         float longi = (float) (location.getLongitude());
 
-   //     Toast.makeText(context, ""+lat+"\n"+longi, Toast.LENGTH_SHORT).show();
+    //    Toast.makeText(context, ""+lat+"\n"+longi, Toast.LENGTH_SHORT).show();
         get_Zip_from_Google(""+lat+","+longi);
     }
 
@@ -195,7 +195,7 @@ public class ZipcodeFragment extends Fragment implements View.OnClickListener,Lo
 
             if(provider!=null) {
                 location = locationManager.getLastKnownLocation(provider);
-                locationManager.requestLocationUpdates(provider, 4000, 1, ZipcodeFragment.this);
+              //  locationManager.requestLocationUpdates(provider, 4000, 1, ZipcodeFragment.this);
             }else {
                 Toast.makeText(getActivity().getApplicationContext(), "Please turn on GPS to locate", Toast.LENGTH_LONG).show();
             }
@@ -231,6 +231,7 @@ public class ZipcodeFragment extends Fragment implements View.OnClickListener,Lo
 
     class Auto_async extends AsyncTask<String, Integer, Integer>
     {
+        String postal;
         final ArrayList<String> arr=new ArrayList<>();
 
         @Override
@@ -280,9 +281,10 @@ public class ZipcodeFragment extends Fragment implements View.OnClickListener,Lo
                                 {
                                     if(type.get(i).equalsIgnoreCase("postal_code"))
                                     {
-                                        String postal=addressComponent.getLongName();
-                                  //      Toast.makeText(context, ""+postal, Toast.LENGTH_SHORT).show();
+                                        postal=addressComponent.getLongName();
                                         edit_postalcode.setText(postal);
+                                  //      Toast.makeText(context, ""+postal, Toast.LENGTH_SHORT).show();
+
                                     }
                                 }
 
@@ -307,6 +309,7 @@ public class ZipcodeFragment extends Fragment implements View.OnClickListener,Lo
         protected void onPostExecute(Integer result) {
             // TODO Auto-generated method stub
             super.onPostExecute(result);
+
 
             // final Place_AutocompleteAdapter adapter = new Place_AutocompleteAdapter(getActivity(),android.R.layout.simple_dropdown_item_1line);
 

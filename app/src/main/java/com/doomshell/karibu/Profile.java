@@ -32,20 +32,37 @@ public class Profile extends Fragment implements View.OnClickListener {
         profile_mobile=(TextView)convertview.findViewById(R.id.editp_mob);
 
         profile_change=(TextView)convertview.findViewById(R.id.profile_edit);
-        profile_change.setOnClickListener(this);
 
-        userid= SharedPrefManager.getInstance(context).getUser_details("userid");
-        email=SharedPrefManager.getInstance(context).getUser_details("emailid");
-        fname=SharedPrefManager.getInstance(context).getUser_details("fname");
-        mobl=SharedPrefManager.getInstance(context).getUser_details("mobile");
 
-        if(email.equalsIgnoreCase("null")||email==null){email="";}
-        if(fname.equalsIgnoreCase("null")||fname==null){fname="";}
-        if(mobl.equalsIgnoreCase("null")||mobl==null){mobl="";}
+        if(SharedPrefManager.getInstance(context).getLogin_status("islogin")) {
+            userid = SharedPrefManager.getInstance(context).getUser_details("userid");
+            email = SharedPrefManager.getInstance(context).getUser_details("emailid");
+            fname = SharedPrefManager.getInstance(context).getUser_details("fname");
+            mobl = SharedPrefManager.getInstance(context).getUser_details("mobile");
 
-        profile_email.setText(email);
-        profile_firstname.setText(fname);
-        profile_mobile.setText(mobl);
+            if (email.equalsIgnoreCase("null") || email == null) {
+                email = "";
+            }
+            if (fname.equalsIgnoreCase("null") || fname == null) {
+                fname = "";
+            }
+            if (mobl.equalsIgnoreCase("null") || mobl == null) {
+                mobl = "";
+            }
+
+            profile_email.setText(email);
+            profile_firstname.setText(fname);
+            profile_mobile.setText(mobl);
+
+            profile_change.setOnClickListener(this);
+        }else {
+            profile_email.setText("Please Login First");
+            profile_firstname.setText("Please Login First");
+            profile_mobile.setText("Please Login First");
+
+            profile_change.setBackgroundColor(getActivity().getResources().getColor(R.color.grey));
+            profile_change.setOnClickListener(null);
+        }
         return convertview;
     }
 
