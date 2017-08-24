@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.doomshell.karibu.Home">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStartWithNavigation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="#fff"
+            app:subtitleTextColor="#fff"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:elevation="0dp"
+            android:gravity="center"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStartWithNavigation="0dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/activity_horizontal_margin_double"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#fff"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    tools:text="Home"
+                    android:text="Home"
+                    android:maxLines="2"/>
+
+
+
+                <LinearLayout
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/activity_horizontal_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:src="@drawable/cart_icon" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/circle_fill_white"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <!-- <ImageView
+            android:id="@+id/carticon_wishlist"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_wishlist_cart"
+            android:tint="@color/colorPrimary"
+            android:visibility="gone" />
+        -->
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        android:weightSum="1"
+        android:paddingTop="8dp"
+        android:padding="2dp"
+        app:layout_behavior="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/restro_footer"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:drawableTint="#ffffff"
+            android:drawableTop="@drawable/footer_restro"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:text="Restaurant"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:drawableTint="#ffffff"
+            android:drawableTop="@drawable/footer_grocery_white"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:text="Grocery"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:drawableTint="#ffffff"
+            android:drawableTop="@drawable/footer_announce_white"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:text="Annonces"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/footer_search"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight=".25"
+            android:drawableTint="#ffffff"
+            android:drawableTop="@drawable/search_icon"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:text="Search"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+    <include layout="@layout/content_home" />
+
+</RelativeLayout>

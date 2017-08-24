@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Karibu</string>
+
+    <string name="facebook_app_id">820489378107898</string>
+    <string name="google_key">AIzaSyD0eztg_sybuuuNjZW44Nex3XKHi4GwRA4</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+</resources>

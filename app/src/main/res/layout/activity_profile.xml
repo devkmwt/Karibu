@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/meal_back"
+    tools:context="com.doomshell.karibu.Profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="#e7ffffff"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dip"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account Information"
+                android:textColor="@color/colorPrimary"
+                android:paddingBottom="10dip"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:lineSpacingExtra="0sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dip"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:text="Email Id"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:paddingBottom="5dip"
+                    android:lineSpacingExtra="0sp"
+                    android:textSize="11.7sp"
+                    android:textStyle="normal"
+                    android:textColor="#5a5a5a"/>
+
+                <TextView
+                    android:id="@+id/editp_id"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:text="neha@doomshell.com"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:paddingBottom="5dip"
+                    android:lineSpacingExtra="0sp"
+                    android:textSize="11.7sp"
+                    android:textStyle="normal"
+                    android:textColor="#5a5a5a"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dip"
+            android:layout_margin="5dp"
+            android:background="#5a919191"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dip"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:text="First Name"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:paddingBottom="5dip"
+                    android:lineSpacingExtra="0sp"
+                    android:textSize="11.7sp"
+                    android:textStyle="normal"
+                    android:textColor="#5a5a5a"/>
+
+                <TextView
+                    android:id="@+id/editp_name"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:text="Neha"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:paddingBottom="5dip"
+                    android:lineSpacingExtra="0sp"
+                    android:textSize="11.7sp"
+                    android:textStyle="normal"
+                    android:textColor="#5a5a5a"/>
+            </LinearLayout><!--
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:text="Last Name"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:paddingBottom="5dip"
+                    android:lineSpacingExtra="0sp"
+                    android:textSize="11.7sp"
+                    android:textStyle="normal"
+                    android:textColor="#5a5a5a"/>
+
+                <TextView
+                    android:id="@+id/editp_lname"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:text="raj"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:paddingBottom="5dip"
+                    android:lineSpacingExtra="0sp"
+                    android:textSize="11.7sp"
+                    android:textStyle="normal"
+                    android:textColor="#5a5a5a"/>
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:text="Phone Number"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:paddingBottom="5dip"
+                    android:lineSpacingExtra="0sp"
+                    android:textSize="11.7sp"
+                    android:textStyle="normal"
+                    android:textColor="#5a5a5a"/>
+
+                <TextView
+                    android:id="@+id/editp_mob"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:paddingBottom="5dip"
+                    android:text="8385877333"
+                    android:lineSpacingExtra="0sp"
+                    android:textSize="11.7sp"
+                    android:textStyle="normal"
+                    android:textColor="#5a5a5a"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/profile_edit"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:background="@color/colorPrimary"
+                android:textColor="#ffffff"
+                android:padding="10dip"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:lineSpacingExtra="0sp"
+                android:textStyle="bold"
+                android:textSize="11.7sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.doomshell.karibu.Milano_product">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".4"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".7"
+                android:src="@drawable/splash_img" />
+
+            <TextView
+                android:fontFamily="sans-serif"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".15"
+                android:gravity="center"
+                android:text="Hachis Parmentier"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".15"
+                android:gravity="center"
+                android:text="$9.95"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:background="@drawable/back_light_color"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="fill"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="Recommended Item"
+                android:textColor="#000"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".4"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".7"
+                    android:padding="@dimen/activity_horizontal_margin_double_half"
+                    android:src="@drawable/splash_img" />
+
+                <TextView
+                    android:fontFamily="sans-serif"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".15"
+                    android:gravity="center"
+                    android:text="Hachis Parmentier"
+                    android:textColor="#000"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:fontFamily="sans-serif"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".15"
+                    android:gravity="center"
+                    android:text="$9.95"
+                    android:textColor="#000"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#d4d4d4"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <ImageView
+                    android:padding="@dimen/activity_horizontal_margin_double_half"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".7"
+                    android:src="@drawable/splash_img" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".15"
+                    android:gravity="center"
+                    android:text="Hachis Parmentier"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:fontFamily="sans-serif"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".15"
+                    android:gravity="center"
+                    android:text="$9.95"
+                    android:textColor="#000"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:background="@drawable/back_light_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:gravity="right"
+                android:layout_width="0dp"
+                android:padding="@dimen/activity_horizontal_margin_double_half"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin_double_half"
+                android:layout_height="match_parent"
+                android:layout_weight=".6">
+
+
+                <LinearLayout
+                    android:gravity="fill"
+                    android:paddingRight="@dimen/activity_horizontal_margin_double_half"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_half"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#f2eded">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:fontFamily="sans-serif"
+                        android:text="\u2212"
+                        android:textColor="#d5252d"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:padding="@dimen/activity_horizontal_margin_double_half"
+                        android:text="1"
+                        android:gravity="center"
+                        android:textColor="#d5252d"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:fontFamily="sans-serif"
+                        android:text="\u002B"
+                        android:textColor="#d5252d"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="left"
+                android:layout_width="0dp"
+                android:padding="@dimen/activity_horizontal_margin_double_half"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin_double_half"
+                android:layout_height="match_parent"
+                android:layout_weight=".4">
+
+                <Button
+                    android:id="@+id/cart_img"
+                    android:fontFamily="sans-serif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#d5252d"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/activity_horizontal_margin_half"
+                    android:paddingRight="@dimen/activity_horizontal_margin_half"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_half"
+                    android:text="Add to cart"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

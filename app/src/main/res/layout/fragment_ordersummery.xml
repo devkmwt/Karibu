@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.doomshell.karibu.Ordersummery">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dip">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f1efef"
+                    android:orientation="vertical"
+                    android:padding="8dip">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:paddingBottom="10dip"
+                        android:text="Your Order Summary"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18dip"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="10dip"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:gravity="left"
+                            android:paddingBottom="5dip"
+                            android:text="Order No."
+                            android:textSize="11.7sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:gravity="right"
+                            android:paddingBottom="5dip"
+                            android:textSize="11.7sp"
+                            android:textStyle="normal"
+                            android:text="2089" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:gravity="left"
+                            android:paddingBottom="5dip"
+                            android:text="Payment"
+                            android:textSize="11.7sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:gravity="right"
+                            android:paddingBottom="5dip"
+                            android:text="Visa"
+                            android:textSize="11.7sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:gravity="left"
+                            android:paddingBottom="5dip"
+                            android:text="Order Date"
+                            android:textSize="11.7sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:gravity="right"
+                            android:text="23-Jan-2017"
+                            android:textSize="11.7sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dip"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:gravity="left"
+                            android:paddingBottom="5dip"
+                            android:text="Order Status"
+                            android:textSize="11.7sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:gravity="right"
+                            android:paddingBottom="5dip"
+                            android:text="Not Processed"
+                            android:textSize="11.7sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dip"
+                        android:textSize="11.7sp"
+                        android:textStyle="normal"
+                        tools:text="Name : Anuj kumawat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dip"
+                        android:text="Delivery Address :"
+                        android:textSize="11.7sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="5dip"
+                        android:text="A3 Mall Road Near Radhey Bakers,Vidhyadhar Nager, Jaipur -302003"
+                        android:textSize="11.7sp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dip">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#f1efef">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/Basecolorbtn"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".30"
+                            android:fontFamily="sans-serif-thin"
+                            android:gravity="left"
+                            android:padding="10dip"
+                            android:text="Item Name"
+                            android:textColor="#ffffff"
+                            android:textSize="11.7sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".23"
+                            android:fontFamily="sans-serif-thin"
+                            android:gravity="left"
+                            android:padding="10dip"
+                            android:text="Price"
+                            android:textColor="#ffffff"
+                            android:textSize="11.7sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".23"
+                            android:fontFamily="sans-serif-thin"
+                            android:gravity="left"
+                            android:padding="10dip"
+                            android:text="Qty"
+                            android:textColor="#ffffff"
+                            android:textSize="11.7sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".24"
+                            android:fontFamily="sans-serif-thin"
+                            android:gravity="left"
+                            android:padding="10dip"
+                            android:text="Total"
+                            android:textColor="#ffffff"
+                            android:textSize="11.7sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                   <include layout="@layout/order_summary_items"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:background="@color/Basecolorbtn"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_marginRight="@dimen/activity_horizontal_margin"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".77"
+                            android:fontFamily="sans-serif-thin"
+                            android:gravity="right"
+                            android:padding="10dip"
+                            android:text="Total"
+                            android:textColor="#ffffff"
+                            android:textSize="11.7sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/total_amount"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".23"
+                            android:fontFamily="sans-serif-thin"
+                            android:gravity="left|center_vertical"
+                            android:text="$ 50"
+                            android:textColor="#ffffff"
+                            android:textSize="11.7sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
