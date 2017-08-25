@@ -1,8 +1,6 @@
 
 package com.doomshell.karibu.model.retrofit_model;
 
-import com.doomshell.karibu.model.retrofit_model.for_zip.Northeast;
-import com.doomshell.karibu.model.retrofit_model.for_zip.Southwest;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

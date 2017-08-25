@@ -97,9 +97,8 @@ public class Home extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                ActionBar actionBar = getSupportActionBar();
-                actionBar.setTitle("Edit Profile");
-                Profile profile = new Profile();
+              Profile profile = new Profile();
+
                 FragmentTransaction devicetrans = getSupportFragmentManager().beginTransaction();
                 devicetrans.replace(R.id.home_container, profile);
 

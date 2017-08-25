@@ -1,5 +1,7 @@
 package com.doomshell.karibu.helper;
 
+import com.doomshell.karibu.model.retrofit_model.FetchHomeProduct;
+import com.doomshell.karibu.model.retrofit_model.FetchHomeProductsById;
 import com.doomshell.karibu.model.retrofit_model.RetroEdiproPojo;
 import com.doomshell.karibu.model.retrofit_model.for_zip.Result;
 import com.doomshell.karibu.model.retrofit_model.RetroLoginPojo;
@@ -43,6 +45,17 @@ public interface ServerApi {
             @Field("name") String password,
             @Field("mobile") String mobile,
             @Field("password") String pass);
+
+    @FormUrlEncoded
+    @POST("/mobile/fatch_home_item")
+    Call<FetchHomeProductsById> fatch_home_item(
+            @Field("count") int count,
+            @Field("type") int type,
+            @Field("zipcode") String zipcode);
+
+
+    @GET("/mobile/fatch_home_product")
+    Call<FetchHomeProduct> fatch_home_product();
 
 
 
