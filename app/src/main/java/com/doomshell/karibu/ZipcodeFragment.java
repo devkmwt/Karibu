@@ -52,7 +52,7 @@ public class ZipcodeFragment extends Fragment implements View.OnClickListener,Lo
 
     EditText edit_postalcode;
     Button postalcode_submit_btn;
-    TextView zip_login_text;
+    TextView zip_login_text,zip_skip_text;
     View convertview;
 
     Retrofit restAdapter_google;
@@ -70,10 +70,12 @@ public class ZipcodeFragment extends Fragment implements View.OnClickListener,Lo
         context=getActivity().getApplicationContext();
         convertview = inflater.inflate(R.layout.fragment_zipcode, container, false);
         postalcode_submit_btn = (Button) convertview.findViewById(R.id.postalcode_submit_btn);
-        zip_login_text = (TextView) convertview.findViewById(R.id.zip_skip_text);
+        zip_login_text = (TextView) convertview.findViewById(R.id.zip_login_text);
+        zip_skip_text = (TextView) convertview.findViewById(R.id.zip_skip_text);
         edit_postalcode = (EditText) convertview.findViewById(R.id.edit_postalcode);
        // postalcode_submit_btn.setOnClickListener(this);
         zip_login_text.setOnClickListener(this);
+        zip_skip_text.setOnClickListener(this);
 
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
@@ -96,9 +98,14 @@ public class ZipcodeFragment extends Fragment implements View.OnClickListener,Lo
                 Toast.makeText(getActivity(), "You need to fill postal code", Toast.LENGTH_SHORT).show();
             }
         }*/
-        if (v == zip_login_text) {
+        if (v == zip_skip_text) {
 
             Intent intent=new Intent(getActivity(),Home.class);
+            startActivity(intent);
+        }
+        if (v == zip_login_text) {
+
+            Intent intent=new Intent(getActivity(),Log_in.class);
             startActivity(intent);
         }
 

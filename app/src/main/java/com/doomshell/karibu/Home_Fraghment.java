@@ -91,7 +91,7 @@ View convertview;
                                      id.add(ofh.getId());
                                  }
 
-                                 HomeAdaptor_Mine homeAdaptor_mine=new HomeAdaptor_Mine(id,name,getActivity());
+                                 HomeAdaptor_Mine homeAdaptor_mine=new HomeAdaptor_Mine(id,name,getActivity(),getActivity().getApplicationContext());
                                  home_types_recyleView.setAdapter(homeAdaptor_mine);
 
                              }else {

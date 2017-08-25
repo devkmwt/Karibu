@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.doomshell.karibu.adapter.ViewPager_adapter;
 
 import java.util.Timer;
@@ -37,6 +38,10 @@ public class Milano extends FragmentActivity implements
     int page =0;
     private ViewPager viewPager;
     private ViewPager_adapter pageadapter;
+    String Restro_name,Restro_Image;
+    int Restro_ID;
+    TextView restro_name_text;
+    ImageView restro_image;
 
     // Tab titles
     private String[] tabs = { "Menu", "Review", "INFO" };
@@ -51,7 +56,12 @@ public class Milano extends FragmentActivity implements
 
         setContentView(R.layout.activity_milano);
 
+        Restro_name=getIntent().getStringExtra("name");
+        Restro_Image=getIntent().getStringExtra("image");
+        Restro_ID=getIntent().getIntExtra("cat_id",0);
 
+        restro_image = (ImageView) findViewById(R.id.restro_image);
+        restro_name_text = (TextView) findViewById(R.id.restro_name_text);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         //imageView=(ImageView)findViewById(R.id.cart_img);
         viewPager=(ViewPager)findViewById(R.id.myviewpager);
@@ -65,20 +75,9 @@ public class Milano extends FragmentActivity implements
 
         tabLayout.setupWithViewPager(viewPager);
 
-      /*  imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        restro_name_text.setText(Restro_name);
+     //   Glide.with(Milano.this).load(Restro_Image).into(restro_image);
 
-                AlertDialog.Builder builder=new AlertDialog.Builder(Milano.this);
-                LayoutInflater inflater= getLayoutInflater();
-                View alerview=inflater.inflate(R.layout.activity_checkout,null);
-                builder.setView(alerview);
-                AlertDialog alertDialog=builder.create();
-                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-                alertDialog.show();
-            }
-        });*/
    }
 
 

@@ -112,19 +112,35 @@
                 android:weightSum="1">
 
                 <TextView
-                    android:id="@+id/zip_skip_text"
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="2dp"
-                    android:textSize="20sp"
-                    android:text="Skip >>"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:textColor="#000"
-                    android:padding="@dimen/activity_horizontal_margin_double_half"
-                    android:textStyle="bold" />
+                    android:text="Already have an account ?"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:id="@+id/zip_login_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:text="Login"
+                    android:textColor="@color/Basecolorbtn"
+                    android:textStyle="bold"/>
+
 
             </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:id="@+id/zip_skip_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Skip"
+                android:background="@color/Basecolorbtn"
+                android:gravity="center"
+                android:layout_gravity="end"
+                android:fontFamily="sans-serif"
+                android:textColor="#fff"
+                android:padding="@dimen/activity_horizontal_margin_double_half" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
