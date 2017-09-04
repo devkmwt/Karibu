@@ -4,38 +4,23 @@ package com.doomshell.karibu.model.retrofit_model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Output {
+public class Info_Paymentmethod {
 
     @SerializedName("id")
     @Expose
-    private int id;
+    private String id;
     @SerializedName("name")
     @Expose
     private String name;
+    @SerializedName("image")
+    @Expose
+    private String image;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Output() {
-    }
-
-    /**
-     * 
-     * @param id
-     * @param name
-     */
-    public Output(int id, String name) {
-        super();
-        this.id = id;
-        this.name = name;
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,6 +30,14 @@ public class Output {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 }

@@ -29,7 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Milano" />
+        <activity android:name=".Milano"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Log_in"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Registration"
@@ -46,7 +47,8 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-        <activity android:name=".Account" />
+        <activity android:name=".Account"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Search_Activity"
             android:label=""
@@ -54,7 +56,8 @@
   <activity
             android:name=".Search"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+      android:windowSoftInputMode="adjustNothing"></activity>
 
         <meta-data
             android:name="com.google.android.API_KEY"

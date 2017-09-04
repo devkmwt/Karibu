@@ -1,19 +1,15 @@
 package com.doomshell.karibu;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.doomshell.karibu.adapter.HomeAdaptor_Mine;
@@ -83,7 +79,7 @@ View convertview;
                                  ArrayList<String> name = new ArrayList<>();
                                  ArrayList<Integer> id = new ArrayList<>();
 
-                                 ArrayList<Output_Fetch_HomeProduct> output_fetch_homeProducts_List= (ArrayList<Output_Fetch_HomeProduct>) response.body().getOutput();
+                                 ArrayList<Output_Fetch_HomeProduct> output_fetch_homeProducts_List= (ArrayList<Output_Fetch_HomeProduct>) response.body().getOutputFatchhomeproduct();
 
                                  for(Output_Fetch_HomeProduct ofh:output_fetch_homeProducts_List)
                                  {
@@ -91,7 +87,7 @@ View convertview;
                                      id.add(ofh.getId());
                                  }
 
-                                 HomeAdaptor_Mine homeAdaptor_mine=new HomeAdaptor_Mine(id,name,getActivity(),getActivity().getApplicationContext());
+                                 HomeAdaptor_Mine homeAdaptor_mine=new HomeAdaptor_Mine(id,name,getActivity(),context);
                                  home_types_recyleView.setAdapter(homeAdaptor_mine);
 
                              }else {

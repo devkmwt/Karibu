@@ -216,8 +216,12 @@ public class Log_in extends AppCompatActivity implements View.OnClickListener, G
 
                     contactdialog.dismiss();
                     Toast.makeText(context, "Welcome "+response.body().getFirstName(), Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(context,Home.class);
-                    startActivity(intent);
+                   /* Intent intent=new Intent(context,Home.class);
+                    startActivity(intent);*/
+
+                    activity.finish();
+                    /*activity.startActivity(getIntent());
+                    activity.overridePendingTransition( 0, 0);*/
                 }
                 else
                 {
@@ -349,6 +353,8 @@ public class Log_in extends AppCompatActivity implements View.OnClickListener, G
 
         if(v == rgstr)
         {
+            Intent intent=new Intent(Log_in.this,Registration.class);
+            startActivity(intent);
            /* Registration registration = new Registration();
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.first_container, registration);

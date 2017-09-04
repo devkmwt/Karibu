@@ -15,38 +15,18 @@
         android:orientation="vertical"
         android:weightSum="1">
 
-        <LinearLayout
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/millano_cordination"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".25"
             android:orientation="vertical"
             android:weightSum="1">
 
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_margin="@dimen/activity_horizontal_margin_half"
-                android:layout_weight=".3"
-                android:background="@drawable/back_light_color"
-                android:orientation="vertical">
-
-                <SearchView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="#00ffffff"
-                    android:queryHint="Search for a product" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#dad2d2" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".7"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:weightSum="1">
 
@@ -68,8 +48,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="7dp"
-                    android:paddingLeft="2dp"
-                    android:layout_weight=".60"
+                    android:paddingLeft="@dimen/activity_horizontal_margin_half"
+                    android:layout_weight=".80"
                     android:orientation="vertical"
                     android:weightSum="1">
 
@@ -126,11 +106,13 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/restro_type"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif"
-                                android:text="Delivery Costa"
+                                tools:text="Delivery Costa"
                                 android:textColor="#868282"
+                                android:maxLines="2"
                                 android:textSize="10sp" />
 
 
@@ -146,11 +128,12 @@
                                     android:src="@drawable/scooter" />
 
                                 <TextView
+                                    android:id="@+id/restro_deliver"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:fontFamily="sans-serif"
                                     android:gravity="center"
-                                    android:text="Free"
+                                    tools:text="Free"
                                     android:textColor="#868282"
                                     android:textSize="10sp" />
 
@@ -159,6 +142,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight=".6"
@@ -177,23 +161,21 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.20"
-                    android:gravity="center">
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/restro_cart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        app:srcCompat="@drawable/cart"
+                        android:backgroundTint="@color/Basecolorbtn"
+                        app:borderWidth="0dp"
+                        android:layout_margin="@dimen/activity_horizontal_margin_half"
+                        app:elevation="@dimen/activity_horizontal_margin_half" />
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:padding="@dimen/activity_horizontal_margin_half"
-                        android:src="@drawable/cart" />
 
-                </LinearLayout>
 
             </LinearLayout>
-        </LinearLayout>
+        </android.support.design.widget.CoordinatorLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

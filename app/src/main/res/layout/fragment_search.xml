@@ -19,25 +19,37 @@
         android:background="@color/colorPrimary"
         android:gravity="center">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/Basecolorbtn"
+            android:weightSum="1"
+            android:orientation="horizontal"
             android:padding="@dimen/activity_horizontal_margin_double_half">
 
             <android.support.v7.widget.SearchView
-                android:layout_width="match_parent"
+                android:id="@+id/search_sb"
+                android:layout_weight="0.70"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:queryHint="Search"
                 app:defaultQueryHint="Search"
                 android:iconifiedByDefault="true"
                 android:foregroundTint="#fff"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin_double"
-                android:layout_marginRight="@dimen/activity_horizontal_margin_double"
+                app:iconifiedByDefault="true"
                 android:layout_centerInParent="true"
-                android:background="@drawable/border_search"></android.support.v7.widget.SearchView>
+                android:background="@drawable/border_search"/>
 
-        </RelativeLayout>
+            <Button
+                android:id="@+id/search_find"
+                android:layout_width="0dp"
+                android:layout_weight="0.30"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_border"
+                android:text="Find"
+                android:textColor="@color/Basecolorbtn"/>
+
+        </LinearLayout>
 
         </android.support.v7.widget.Toolbar>
 
@@ -57,6 +69,7 @@
             android:background="@color/Basecolorbtn">
 
             <RadioGroup
+                android:id="@+id/search_rg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -109,6 +122,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:weightSum="1"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -123,18 +137,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rating"
-                    android:textColor="#000000"
-                    android:layout_margin="@dimen/activity_horizontal_margin_double_half"
-                    android:gravity="left"/>
+                    android:textColor="#000000"/>
 
             <RatingBar
-                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/search_ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="5"
-                android:stepSize="1"
                 android:layout_margin="@dimen/activity_horizontal_margin_double_half"
+                style="?android:attr/ratingBarStyleSmall"
+                android:numStars="5"
+                android:stepSize=".5"
+                android:isIndicator="false"
                 android:theme="@style/RatingBar" />
 
 
@@ -142,6 +155,23 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/kitchentype_linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".4"
+                android:background="@drawable/button_border"
+                android:layout_margin="@dimen/activity_horizontal_margin_half"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:layout_margin="2dp"
+                    android:id="@+id/search_ktype_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></Spinner>
+
+
+            </LinearLayout>
+<!--            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".4"
@@ -159,7 +189,7 @@
                     android:textAllCaps="false"
                     android:text="Select All" />
 
-            </LinearLayout>
+            </LinearLayout>-->
 
         </LinearLayout>
 
@@ -170,297 +200,18 @@
                 android:layout_weight="8.30"
                 android:orientation="vertical"
                 android:weightSum="1">
-
-            <LinearLayout
+            <ImageView
+                android:id="@+id/no_found_img"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".5"
-                android:weightSum="1">
+                android:layout_height="match_parent"
+                android:src="@drawable/notfound"
+                android:visibility="gone"/>
 
-                <LinearLayout
-                    android:id="@+id/search1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.50"
-                    android:orientation="vertical"
-                    android:padding="@dimen/activity_horizontal_margin_double_half">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.50"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:padding="@dimen/activity_horizontal_margin_half"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/dominos_logo" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.50"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Dominos"
-                            android:fontFamily="sans-serif"
-                            android:textColor="#000"
-                            android:textStyle="normal" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:fontFamily="sans-serif"
-                            android:text="Indian, International"
-                            android:textColor="#000"
-                            android:textSize="10sp"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:src="@drawable/scootersmall" />
-
-                            <TextView
-                                android:fontFamily="sans-serif"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="@dimen/activity_horizontal_margin_half"
-                                android:gravity="right|center"
-                                android:text="Free"
-                                android:textColor="#868282"
-                                android:textSize="10sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <RatingBar
-                                style="?android:attr/ratingBarStyleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center_vertical"
-                                android:numStars="5"
-                                android:rating="5"
-                                android:textColor="#000" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/search2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.50"
-                    android:orientation="vertical"
-                    android:padding="@dimen/activity_horizontal_margin_double_half">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.50"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_margin="@dimen/activity_horizontal_margin_half"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/kfc_logo" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.50"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Dominos"
-                            android:fontFamily="sans-serif"
-                            android:textColor="#000"
-                            android:textStyle="normal" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:fontFamily="sans-serif"
-                            android:text="Indian, International"
-                            android:textColor="#000"
-                            android:textSize="10sp"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:src="@drawable/scootersmall" />
-
-                            <TextView
-                                android:fontFamily="sans-serif"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="@dimen/activity_horizontal_margin_half"
-                                android:gravity="right|center"
-                                android:text="Free"
-                                android:textColor="#868282"
-                                android:textSize="10sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <RatingBar
-                                style="?android:attr/ratingBarStyleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center_vertical"
-                                android:numStars="5"
-                                android:rating="5"
-                                android:textColor="#000" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/search3"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/search_recycler"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".5"
-                android:weightSum="1">
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.50"
-                    android:orientation="vertical"
-                    android:padding="@dimen/activity_horizontal_margin_double_half">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.50"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_margin="@dimen/activity_horizontal_margin_half"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/kfc_logo" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.50"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Dominos"
-                            android:fontFamily="sans-serif"
-                            android:textColor="#000"
-                            android:textStyle="normal" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:fontFamily="sans-serif"
-                            android:text="Indian, International"
-                            android:textColor="#000"
-                            android:textSize="10sp"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:src="@drawable/scootersmall" />
-
-                            <TextView
-                                android:fontFamily="sans-serif"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="@dimen/activity_horizontal_margin_half"
-                                android:gravity="right|center"
-                                android:text="Free"
-                                android:textColor="#868282"
-                                android:textSize="10sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-
-                            <RatingBar
-                                style="?android:attr/ratingBarStyleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center_vertical"
-                                android:numStars="5"
-                                android:rating="5"
-                                android:textColor="#000" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
 
         </LinearLayout>
 

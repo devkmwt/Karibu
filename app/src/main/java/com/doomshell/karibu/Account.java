@@ -1,11 +1,11 @@
 package com.doomshell.karibu;
 
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 
-public class Account extends FragmentActivity {
+public class Account extends AppCompatActivity {
 
 
     @Override

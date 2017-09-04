@@ -6,4 +6,5 @@
     <color name="colorPrimaryDark">#d5232c</color>
     <color name="Basecolorbtn">#d5232c</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="transparent">#00ffffff</color>
 </resources>

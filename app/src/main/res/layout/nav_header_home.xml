@@ -1,13 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="#fff"
-    android:gravity="bottom"
+    android:gravity="bottom|left"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <LinearLayout
+
+    <ImageView
+        android:id="@+id/nav_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/setting"
+        android:layout_gravity="end"/>
+
+    <ImageView
+        android:id="@+id/navheader_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/userlogin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+
+
+    <TextView
+        android:id="@+id/Dusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
+        android:text="Name"
+        android:textColor="#d5252d"
+        android:textStyle="normal" />
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/Demail"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="normal"
+        android:textColor="#d5252d"
+        android:lineSpacingExtra="6sp"
+        android:gravity="center_horizontal"
+        android:text="info@freshrush.com" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -57,3 +120,4 @@
     </LinearLayout>
 
 </LinearLayout>
+-->

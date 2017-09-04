@@ -12,10 +12,7 @@
             android:id="@+id/nav_order"
             android:icon="@drawable/menu_3_icom"
             android:title="Order History" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/menu_4_icom"
-            android:title="WishList" />
+
 
         <item
             android:id="@+id/nav_share"
